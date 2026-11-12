@@ -74,9 +74,18 @@ def detalle_personaje(categoria: str, nombre: str):
     if not resultados:
         return None
     for doc in resultados:
-        if doc.get("name", {}).get("english") == nombre:
+        if nombre_ingles(doc) == nombre:
             return doc
     return resultados[0]
+
+
+def nombre_ingles(doc) -> str | None:
+    """El campo "name" casi siempre es un objeto {"english": ...}, pero en
+    algunos personajes la API lo trae como texto plano. Se aceptan ambos."""
+    name = doc.get("name")
+    if isinstance(name, dict):
+        return name.get("english")
+    return name
 
 
 def main():

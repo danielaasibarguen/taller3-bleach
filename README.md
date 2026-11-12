@@ -1,4 +1,4 @@
-# Taller 3 — APIs Públicas, MongoDB y EDA: personajes de *Bleach* ⚔️
+# Taller 3 — APIs Públicas, MongoDB y EDA: personajes de *Bleach*
 
 **Autora:** Daniela Alejandra Salazar
 **Curso:** Bases de Datos para Ciencia de Datos — Docente: Miguel Ramos García
@@ -92,9 +92,9 @@ jupyter notebook analisis.ipynb
 5. Porcentaje de Shinigami con bankai revelado.
 
 **Gráficos:**
-1. 🥧 Torta: proporción de personajes por género.
-2. 📊 Barras: estatura promedio por categoría.
-3. 📈 Histograma: capítulo del manga en que debuta cada personaje, por categoría.
+1. Torta: proporción de personajes por género.
+2. Barras: estatura promedio por categoría.
+3. Histograma: capítulo del manga en que debuta cada personaje, por categoría.
 
 ## Principales hallazgos
 
