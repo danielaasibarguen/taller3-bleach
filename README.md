@@ -73,9 +73,7 @@ jupyter notebook analisis.ipynb
 
 - Recorre las 4 categorías, pide la lista de nombres y luego el detalle de cada personaje (**221 documentos**, más de los 100 requeridos).
 - Se conecta a MongoDB, usa la base de datos **`taller3_db`** y la colección **`raw_data`**.
-- Inserta el **JSON completo tal como llega de la API**. Solo agrega:
-  - `_id`: el `id` que entrega la API (ej. `"byakuya_kuchiki"`).
-  - `_categoria_api` y `_fecha_ingesta`: metadatos de la ingesta (con prefijo `_` para distinguirlos de los datos originales).
+- Inserta el **JSON completo tal como llega de la API, sin modificarlo**. Como `_id` del documento se usa el `id` que entrega la API (ej. `"byakuya_kuchiki"`).
 - Usa `replace_one(..., upsert=True)`: si el script se ejecuta varias veces, **no se duplican documentos**.
 
 ## Análisis (`analisis.ipynb`)

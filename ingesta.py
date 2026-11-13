@@ -21,7 +21,6 @@ Uso:
 
 import os
 import time
-from datetime import datetime, timezone
 from urllib.parse import quote
 
 import requests
@@ -109,12 +108,10 @@ def main():
                 fallidos.append(f"{categoria}/{nombre}")
                 continue
 
-            # El JSON se guarda tal cual llega de la API.
-            # Solo se agregan: _id (el id de la API, para evitar duplicados)
-            # y dos metadatos de ingesta con prefijo "_" para distinguirlos.
+            # El JSON se guarda tal cual llega de la API, sin modificar ningún
+            # campo. Solo se usa su "id" como _id del documento, para que no se
+            # dupliquen los datos si el script se ejecuta más de una vez.
             doc["_id"] = doc["id"]
-            doc["_categoria_api"] = categoria
-            doc["_fecha_ingesta"] = datetime.now(timezone.utc)
 
             coleccion.replace_one({"_id": doc["_id"]}, doc, upsert=True)
             total += 1
